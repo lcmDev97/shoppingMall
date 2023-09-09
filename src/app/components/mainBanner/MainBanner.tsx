@@ -1,7 +1,7 @@
 import styles from './mainBanner.module.css'
 import Link from 'next/Link'
 
-export default function Header() {
+export default function MainBanner() {
     return (
         <section className={styles.mainBanner}>
             <h1 className={styles.text}>
