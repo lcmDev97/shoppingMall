@@ -1,5 +1,4 @@
 import styles from './mainContent.module.css'
-import Link from 'next/Link'
 
 export default function MainContent() {
     return (

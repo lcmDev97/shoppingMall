@@ -1,5 +1,4 @@
 import styles from './mainBanner.module.css'
-import Link from 'next/Link'
 
 export default function MainBanner() {
     return (
