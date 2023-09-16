@@ -1,16 +1,14 @@
 import { NextResponse } from 'next/server'
-import connection from '../../utils/db'
+import DB from "../../utils/db";
 
 export async function GET(request: Request) {
-    // connection.connect();
+    let db = DB()
 
-    connection.query('SELECT * FROM users WHERE ?', {name: 'test123'}, function (error, results, fields) {
-        if (error) throw error;
-        console.log('results info:', results);
-    });
+    let data = await db('users').where('name', '이창민').first()
 
     return NextResponse.json({
         message: "hi, i'm get",
+        result: data
     })
 }
 
