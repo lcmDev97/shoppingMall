@@ -28,6 +28,7 @@ export async function POST(request: Request) {
 
     // Skip password encryption
     let inData = {
+        id,
         name,
         password,
         created_at: new Date()
