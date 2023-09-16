@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import DB from "../../utils/db";
+import DB from "../utils/db";
 
 export async function GET(request: Request) {
     let db = DB()
