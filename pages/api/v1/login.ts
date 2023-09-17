@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server'
 import DB from "./utils/db";
 
 export default async function handler(req: Request, res: Response) {
