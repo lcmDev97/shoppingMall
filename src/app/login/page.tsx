@@ -15,7 +15,7 @@ export default function Login() {
 
     const style_wrapper = {
         width: "400px",
-        height: "600px",
+        height: "400px",
         // backgroundColor: "orange",
 
         display: "flex",
@@ -80,10 +80,13 @@ export default function Login() {
                             })
 
                         }}>
-                            <div style={style_input}>아이디<input name={'id'} size={25} /></div>
-                            <div style={style_input}>비밀번호<input name={'password'} type='password' size={25} /></div>
+                            <div style={style_input}>아이디<input name={'id'} size={20} /></div>
+                            <div style={style_input}>비밀번호<input name={'password'} type='password' size={20} /></div>
                             <button style={{width: '100%'}} type='submit'>로그인</button>
                         </form>
+                        <button style={{width: '100%', marginTop: '10px'}} onClick={()=>{
+                            console.log('회원가입')
+                        }}>회원가입</button>
                     </div>
                 </div>
             </div>
