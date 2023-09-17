@@ -1,7 +1,15 @@
+'use client'
 import styles from './header.module.css'
 import Link from 'next/link'
+import {useRouter} from "next/navigation"
 
 export default function Header() {
+    const router = useRouter();
+
+    const userId = localStorage.getItem('id')
+    const userPassword = localStorage.getItem('password')
+    const isLogin = userId ? true : false
+
     return (
         <header className={styles.header}>
             <div className={styles.headerInner}>
@@ -25,7 +33,12 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className={styles.user}>
-                    <h3><Link href="/login">로그인</Link></h3>
+                    {isLogin ? <h3><button onClick={()=>{
+                        localStorage.clear()
+                        router.refresh()
+                        router.push('/')
+                    }}>로그아웃</button> <Link href="/mypage">마이페이지</Link></h3> : <h3><Link href="/login">로그인</Link></h3>}
+                    {/*<h3><Link href="/login">로그인</Link></h3>*/}
                 </div>
             </div>
         </header>
