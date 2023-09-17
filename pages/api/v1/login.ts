@@ -14,7 +14,7 @@ export default async function handler(req: Request, res: Response) {
         .where('password', password)
         .first()
 
-    if(!user) return res.json({ code: 404, message: 'should check id, password' })
+    if(!user) return res.json({ code: 401, message: 'should check id, password' })
 
     return res.json({ code: 200, message: 'OK', result: user })
 }

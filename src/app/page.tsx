@@ -5,7 +5,6 @@ import MainContent from './components/mainContent/MainContent'
 export default function Home() {
   return (
     <>
-        <Header/>
         <MainBanner/>
         <MainContent/>
     </>

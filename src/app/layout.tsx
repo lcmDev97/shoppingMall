@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import React from "react";
+import Header from "@/app/components/header/Header";
 
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+    <body>
+      <Header/>
+      {children}
+    </body>
     </html>
   )
 }

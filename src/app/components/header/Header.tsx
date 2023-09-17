@@ -25,7 +25,7 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className={styles.user}>
-                    <h1><Link href="/">유저사진</Link></h1>
+                    <h3><Link href="/login">로그인</Link></h3>
                 </div>
             </div>
         </header>
