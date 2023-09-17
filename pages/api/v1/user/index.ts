@@ -1,33 +1,30 @@
 import { res } from 'next/server'
 import DB from "../utils/db";
 
-export default async function Main: Request, res: Response, res: Response) {
+export default async function Main(req: Request, res: Response) {
     const httpMethod = req.method
     if(httpMethod === 'GET') {
         console.log("GET HTTP")
-        await GET(req, res)
+        await GetAllUsers(req, res)
     }
 
     if(httpMethod === 'POST') {
         console.log("POST HTTP")
-        await POST(req, res)
+        await CreateUser(req, res)
     }
 
 
 }
 
-export async function GET: Request, res: Response, res: Response) {
+export async function GetAllUsers(req: Request, res: Response) {
     let db = DB()
 
-    let data = await db('users').where('name', '이창민').first()
+    let data = await db('users')
 
-    return res.json({
-        code: 200,
-        result: data
-    })
+    return res.json({ code: 200, message: 'OK', result: data })
 }
 
-export async function POST: Request, res: Response, res: Response) {
+export async function CreateUser(req: Request, res: Response) {
     const body = await req.body
     if(!body) return res.json({ code: 400, message: 'bad request' })
 
