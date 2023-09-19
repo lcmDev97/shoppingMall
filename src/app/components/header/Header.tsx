@@ -38,8 +38,7 @@ export default function Header() {
                         router.refresh()
                         router.push('/')
                     }}>로그아웃</button> <Link href="/mypage">마이페이지</Link></h3> : <h3><Link href="/login">로그인</Link></h3>}
-                    {/*<h3><Link href="/login">로그인</Link></h3>*/}
-                </div>
+                </div>거
             </div>
         </header>
     )
